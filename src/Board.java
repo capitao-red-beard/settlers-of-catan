@@ -5,7 +5,9 @@ import java.util.HashMap;
  */
 public class Board {
 
-    public Board() {
+    private Tile[][] tiles;
 
+    public Board() {
+        tiles = new Tile[6][6];
     }
 }
