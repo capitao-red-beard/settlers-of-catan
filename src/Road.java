@@ -3,13 +3,7 @@
  */
 public class Road {
 
-    private int length = 1;
-
     public Road() {
-        length++;
-    }
 
-    public int getRoadLength() {
-        return length;
     }
 }
