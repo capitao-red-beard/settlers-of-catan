@@ -1,16 +1,18 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Jasper on 30/03/15.
  */
 public class Player {
 
-    private int points;
-    private ArrayList<Resource> resources;
+    private int points, roadLength, armySize;
+    private HashMap<Resource, Integer> resources;
 
     public Player() {
         points = 0;
-        resources = new ArrayList<Resource>();
+        roadLength = 1;
+        resources = new HashMap<Resource, Integer>();
     }
 
     public void addPoints(int value) {
@@ -31,5 +33,6 @@ public class Player {
     }
 
     public void buildRoad() {
+        roadLength++;
     }
 }
