@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by Jasper on 30/03/15.
@@ -7,12 +6,14 @@ import java.util.HashMap;
 public class Player {
 
     private int points, roadLength, armySize;
-    private HashMap<Resource, Integer> resources;
+    private Tile[][] grid;
+    private ArrayList<Resource> resources;
 
     public Player() {
         points = 0;
         roadLength = 1;
-        resources = new HashMap<Resource, Integer>();
+        grid = new Tile[6][6];
+        resources = new ArrayList<Resource>();
     }
 
     public void addPoints(int value) {
@@ -24,7 +25,6 @@ public class Player {
     }
 
     public void buildSettlement() {
-
         addPoints(1);
     }
 
