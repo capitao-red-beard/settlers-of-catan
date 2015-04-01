@@ -1,21 +1,28 @@
-import java.util.Random;
-
 /**
  * Created by Jasper on 30/03/15.
  */
 public class Resource {
 
-    String name;
+    String type;
+    int value;
 
-    public Resource(String name) {
-        this.name = name;
+    public Resource(String type) {
+        this.type = type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String type) {
+        this.type = type;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
+    }
+
+    public void addValue() {
+        value += 1;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 }

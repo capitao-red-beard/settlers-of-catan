@@ -43,7 +43,7 @@ public class Tile {
         return resource;
     }
 
-    public String getTileData() {
-        return "Resource: " + resource.getName() + " | Value: " + value;
+    public String toString() {
+        return "Resource: " + resource.getType() + " | Value: " + value;
     }
 }

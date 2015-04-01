@@ -6,7 +6,7 @@ public class Board {
     private Tile[][] tiles;
 
     public Board() {
-        tiles = new Tile[4][4];
+        tiles = new Tile[5][5];
 
         for (int i = 0; i < tiles.length; ++i) {
             for (int j = 0; j < tiles.length; ++j) {
@@ -16,6 +16,6 @@ public class Board {
     }
 
     public String getTile(int row, int col) {
-        return tiles[row][col].getTileData();
+        return tiles[row][col].toString();
     }
 }
