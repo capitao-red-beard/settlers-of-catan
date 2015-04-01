@@ -12,8 +12,8 @@ public class Tile {
     private Random random;
 
     public Tile() {
-        randomValue(2, 12);
-        randomResource();
+        this.randomValue(2, 12);
+        this.randomResource();
     }
 
     public int randomValue(int min, int max) {
@@ -24,6 +24,13 @@ public class Tile {
 
     public Resource randomResource() {
         resources = new ArrayList<Resource>();
+
+        wood = new Resource("Wood");
+        sheep = new Resource("Sheep");
+        wheat = new Resource("Wheat");
+        stone = new Resource("Stone");
+        iron = new Resource("Iron");
+
         resources.add(wood);
         resources.add(sheep);
         resources.add(wheat);
@@ -34,5 +41,9 @@ public class Tile {
         resource = resources.get(resourceValue);
 
         return resource;
+    }
+
+    public String getTileData() {
+        return "Resource: " + resource.getName() + " | Value: " + value;
     }
 }
