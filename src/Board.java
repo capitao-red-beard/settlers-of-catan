@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /**
  * Created by Jasper on 30/03/15.
  */
@@ -17,9 +19,5 @@ public class Board {
 
     public String getTile(int row, int col) {
         return tiles[row][col].toString();
-    }
-
-    public void addToBoard(Tile tile) {
-
     }
 }

@@ -3,7 +3,10 @@
  */
 public class Construct {
 
-    public Construct() {
+    private int value;
+    private String name;
+
+    public Construct(String name, int value) {
 
     }
 }
