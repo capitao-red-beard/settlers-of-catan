@@ -18,4 +18,8 @@ public class Board {
     public String getTile(int row, int col) {
         return tiles[row][col].toString();
     }
+
+    public void addToBoard(Tile tile) {
+
+    }
 }

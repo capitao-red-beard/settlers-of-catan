@@ -6,13 +6,12 @@ import java.util.ArrayList;
 public class Player {
 
     private int points, roadLength, armySize;
-    private Tile[][] grid;
     private ArrayList<Resource> resources;
+    private Board board;
 
     public Player() {
         points = 0;
         roadLength = 1;
-        grid = new Tile[6][6];
         resources = new ArrayList<Resource>();
     }
 
