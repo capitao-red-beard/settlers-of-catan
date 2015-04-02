@@ -36,8 +36,12 @@ public class Player {
     }
 
     public void removeResource(Resource resource, int value) {
-        for (int i = 0; i < value; ++i) {
-            resources.remove(resource);
+        for (int i = 0; i < resources.size(); ++i) {
+            if (resources.get(i).getType() == resource.getType()) {
+                for (int j = 0; j < value; ++j) {
+                    resources.remove(resource);
+                }
+            }
         }
     }
 
@@ -45,7 +49,7 @@ public class Player {
         int value = 0;
 
         for (int i = 0; i < resources.size(); ++i) {
-            if (resources.get(i) == resource) {
+            if (resources.get(i).getType() == resource.getType()) {
                 value++;
             }
         }
