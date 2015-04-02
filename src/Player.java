@@ -22,19 +22,34 @@ public class Player {
         points += value;
     }
 
+    public void removePoints(int value) {
+        points -= value;
+    }
     public int getPoints() {
         return points;
     }
 
-    public void buildSettlement() {
-        addPoints(1);
+    public void addResource(Resource resource, int value) {
+        for (int i = 0; i < value; ++i) {
+            resources.add(resource);
+        }
     }
 
-    public void buildCity() {
-        addPoints(2);
+    public void removeResource(Resource resource, int value) {
+        for (int i = 0; i < value; ++i) {
+            resources.remove(resource);
+        }
     }
 
-    public void buildRoad() {
-        roadLength++;
+    public int getResourceValue(Resource resource) {
+        int value = 0;
+
+        for (int i = 0; i < resources.size(); ++i) {
+            if (resources.get(i) == resource) {
+                value++;
+            }
+        }
+
+        return value;
     }
 }

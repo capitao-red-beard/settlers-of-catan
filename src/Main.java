@@ -11,5 +11,7 @@ public class Main {
                 System.out.println(board.getTile(i, j));
             }
         }
+
+        Player player1 = new Player("Jasper", "orange");
     }
 }
