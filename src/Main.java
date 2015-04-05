@@ -12,6 +12,6 @@ public class Main {
             }
         }
 
-        Player player1 = new Player("Jasper", "orange");
+        Player player1 = new Player("Jasper", "Orange");
     }
 }
