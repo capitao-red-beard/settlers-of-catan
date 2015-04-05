@@ -4,14 +4,14 @@
 public class Player {
 
     private int points, roadLength, armySize;
-    private Board board;
     private String name, colour;
 
     public Player(String name, String colour) {
         this.name = name;
         this.colour = colour;
         points = 0;
-        roadLength = 1;
+        roadLength = 0;
+        armySize = 0;
     }
 
     public void addPoints(int value) {
@@ -26,6 +26,18 @@ public class Player {
         return points;
     }
 
+    public void addArmy(int value) {
+        armySize += value;
+    }
+
+    public void removeArmy(int value) {
+        armySize -= value;
+    }
+
+    public int getArmyValue() {
+        return armySize;
+    }
+
     public void addResource() {
 
     }
@@ -36,5 +48,13 @@ public class Player {
 
     public int getResourceValue() {
         return 0;
+    }
+
+    public void addRoad(int value) {
+        roadLength += value;
+    }
+
+    public int getRoadLength() {
+        return roadLength;
     }
 }
