@@ -22,4 +22,8 @@ public class Board {
     public void addCity(Player player, int row, int col) {
 
     }
+
+    public void addSettlement(Player player, int row, int col) {
+
+    }
 }
