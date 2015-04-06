@@ -1,12 +1,12 @@
 /**
  * Created by Jasper on 06/04/15.
  */
-public class Desert implements Terrain {
+public class Forest implements Terrain {
 
     private String type;
 
-    public Desert() {
-        type = "Desert";
+    public Forest() {
+        type = "Forest";
     }
 
     @Override

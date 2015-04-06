@@ -3,7 +3,7 @@
  */
 public class Tile {
 
-    private Resource resource;
+    private Terrain terrain;
     private int value;
     private Construction construction;
     private Robber robber;
@@ -16,8 +16,8 @@ public class Tile {
 
     }
 
-    public Tile(Resource resource, int value) {
-        this.resource = resource;
+    public Tile(Terrain terrain, int value) {
+        this.terrain = terrain;
         this.value = value;
     }
 
