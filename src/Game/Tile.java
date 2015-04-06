@@ -16,7 +16,10 @@ public class Tile {
     private Tile north, northEast, northWest, south, southEast, southWest;
 
     public Tile() {
+    }
 
+    public Tile (Terrain terrain) {
+        this.terrain = terrain;
     }
 
     public Tile(Terrain terrain, int value) {
