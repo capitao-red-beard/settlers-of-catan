@@ -47,6 +47,6 @@ public class Tile {
     }
 
     public String toString () {
-        return "Terrain.Terrain: " + terrain.getType() + " | Value: " + value;
+        return "Terrain: " + terrain.getType() + " | Value: " + value;
     }
 }

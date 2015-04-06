@@ -5,13 +5,13 @@ package Game;
  */
 public class Board {
 
-    private Tile[][] tiles;
+    private Tile[] tiles;
 
     public Board() {
-        tiles = new Tile[7][7];
+        tiles = new Tile[49];
     }
 
-    public String getTile(int row, int col) {
-        return tiles[row][col].toString();
+    public String getTile(int number) {
+        return tiles[number].toString();
     }
 }
