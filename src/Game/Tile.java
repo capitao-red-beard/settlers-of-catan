@@ -13,6 +13,8 @@ public class Tile {
     private Construction construction;
     private Robber robber;
 
+    private Tile north, northEast, northWest, south, southEast, southWest;
+
     public Tile() {
 
     }
@@ -44,6 +46,54 @@ public class Tile {
 
     public void setConstruction(Construction construction) {
         this.construction = construction;
+    }
+
+    public Tile getNorth() {
+        return north;
+    }
+
+    public void setNorth(Tile tile) {
+        north = tile;
+    }
+
+    public Tile getNorthEast() {
+        return northEast;
+    }
+
+    public void setNorthEast(Tile tile) {
+        northEast = tile;
+    }
+
+    public Tile getNorthWest() {
+        return northWest;
+    }
+
+    public void setNorthWest(Tile tile) {
+        northWest = tile;
+    }
+
+    public Tile getSouth() {
+        return south;
+    }
+
+    public void setSouth(Tile tile) {
+        south = tile;
+    }
+
+    public Tile getSouthEast() {
+        return southEast;
+    }
+
+    public void setSouthEast(Tile tile) {
+        southEast = tile;
+    }
+
+    public Tile getSouthWest() {
+        return southWest;
+    }
+
+    public void setSouthWest(Tile tile) {
+        southWest = tile;
     }
 
     public String toString () {
