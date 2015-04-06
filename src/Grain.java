@@ -1,12 +1,12 @@
 /**
  * Created by Jasper on 05/04/15.
  */
-public class Iron implements Resource {
+public class Grain implements Resource {
 
     private String type;
 
-    public Iron() {
-        type = "Iron";
+    public Grain() {
+        type = "Grain";
     }
 
     @Override

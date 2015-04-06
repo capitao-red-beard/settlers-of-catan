@@ -6,7 +6,7 @@ public class Board {
     private Tile[][] tiles;
 
     public Board() {
-        tiles = new Tile[5][5];
+        tiles = new Tile[7][7];
     }
 
     public String getTile(int row, int col) {

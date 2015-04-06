@@ -6,6 +6,15 @@ public class Tile {
     private Resource resource;
     private int value;
     private Construction construction;
+    private Robber robber;
+
+    public Tile() {
+
+    }
+
+    public Tile(Resource resource) {
+
+    }
 
     public Tile(Resource resource, int value) {
         this.resource = resource;

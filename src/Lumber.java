@@ -1,12 +1,12 @@
 /**
  * Created by Jasper on 05/04/15.
  */
-public class Stone implements Resource {
+public class Lumber implements Resource {
 
     private String type;
 
-    public Stone() {
-        type = "Stone";
+    public Lumber() {
+        type = "Lumber";
     }
 
     @Override

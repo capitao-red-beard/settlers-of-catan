@@ -1,12 +1,12 @@
 /**
  * Created by Jasper on 05/04/15.
  */
-public class Wood implements Resource {
+public class Wool implements Resource {
 
     private String type;
 
-    public Wood() {
-        type = "Wood";
+    public Wool() {
+        type = "Wool";
     }
 
     @Override
