@@ -5,8 +5,8 @@ public class Iron implements Resource {
 
     private String type;
 
-    public Iron(String type) {
-        this.type = type;
+    public Iron() {
+        type = "Iron";
     }
 
     @Override

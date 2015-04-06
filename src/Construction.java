@@ -4,4 +4,6 @@
 public interface Construction {
 
     String getOwner();
+    String getType();
+    String toString();
 }

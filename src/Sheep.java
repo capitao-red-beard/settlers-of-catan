@@ -5,8 +5,8 @@ public class Sheep implements Resource {
 
     private String type;
 
-    public Sheep(String type) {
-        this.type = type;
+    public Sheep() {
+        type = "Sheep";
     }
 
     @Override

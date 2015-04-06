@@ -12,12 +12,6 @@ public class Tile {
         this.value = value;
     }
 
-    public Tile(Resource resource, int value, Construction construction) {
-        this.resource = resource;
-        this.value = value;
-        this.construction = construction;
-    }
-
     public Resource getResource() {
         return resource;
     }
@@ -34,15 +28,15 @@ public class Tile {
         this.value = value;
     }
 
+    public String getConstruction() {
+        return construction.getType();
+    }
+
     public void setConstruction(Construction construction) {
         this.construction = construction;
     }
 
-    public Construction getConstruction() {
-        return construction;
-    }
-
     public String toString () {
-        return "Resource: " + resource.getType() + "Value: " + value;
+        return "Resource: " + resource.getType() + " | Value: " + value;
     }
 }

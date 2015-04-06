@@ -5,8 +5,8 @@ public class Stone implements Resource {
 
     private String type;
 
-    public Stone(String type) {
-        this.type = type;
+    public Stone() {
+        type = "Stone";
     }
 
     @Override

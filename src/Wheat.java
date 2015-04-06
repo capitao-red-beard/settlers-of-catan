@@ -5,8 +5,8 @@ public class Wheat implements Resource {
 
     private String type;
 
-    public Wheat(String type) {
-        this.type = type;
+    public Wheat() {
+        type = "Wheat";
     }
 
     @Override

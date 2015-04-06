@@ -5,8 +5,8 @@ public class Wood implements Resource {
 
     private String type;
 
-    public Wood(String type) {
-        this.type = type;
+    public Wood() {
+        type = "Wood";
     }
 
     @Override
