@@ -1,12 +1,14 @@
+package Terrain;
+
 /**
  * Created by Jasper on 06/04/15.
  */
-public class Pasture implements Terrain {
+public class Hill implements Terrain {
 
     private String type;
 
-    public Pasture() {
-        type = "Pasture";
+    public Hill() {
+        type = "Hill";
     }
 
     @Override

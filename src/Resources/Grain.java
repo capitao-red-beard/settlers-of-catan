@@ -1,3 +1,7 @@
+package Resources;
+
+import Terrain.Field;
+
 /**
  * Created by Jasper on 05/04/15.
  */

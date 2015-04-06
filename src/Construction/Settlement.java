@@ -1,3 +1,7 @@
+package Construction;
+
+import Game.Player;
+
 /**
  * Created by Jasper on 05/04/15.
  */

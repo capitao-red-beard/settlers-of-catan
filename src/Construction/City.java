@@ -1,14 +1,18 @@
+package Construction;
+
+import Game.Player;
+
 /**
  * Created by Jasper on 05/04/15.
  */
-public class Road implements Construction {
+public class City implements Construction {
 
     private Player player;
     private String type;
 
-    public Road(Player player) {
+    public City(Player player) {
         this.player = player;
-        type = "Road";
+        type = "City";
     }
 
     @Override

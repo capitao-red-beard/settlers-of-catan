@@ -1,3 +1,8 @@
+package Game;
+
+import Terrain.*;
+import Construction.*;
+
 /**
  * Created by Jasper on 05/04/15.
  */
@@ -42,6 +47,6 @@ public class Tile {
     }
 
     public String toString () {
-        return "Terrain: " + terrain.getType() + " | Value: " + value;
+        return "Terrain.Terrain: " + terrain.getType() + " | Value: " + value;
     }
 }

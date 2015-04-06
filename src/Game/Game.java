@@ -1,3 +1,7 @@
+package Game;
+
+import Resources.Resource;
+
 import java.util.ArrayList;
 
 /**

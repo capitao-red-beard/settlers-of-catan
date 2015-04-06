@@ -1,5 +1,9 @@
+package Game;
+
+import Construction.*;
+import Resources.Resource;
+
 import java.util.HashMap;
-import java.util.Set;
 
 /**
  * Created by Jasper on 30/03/15.
@@ -24,14 +28,6 @@ public class Player {
 
         resources = new HashMap<Resource, Integer>();
         constructions = new HashMap<Construction, Integer>();
-
-        city = new City(this);
-        settlement = new Settlement(this);
-        road = new Road(this);
-
-        constructions.put(city, 5);
-        constructions.put(settlement, 5);
-        constructions.put(road, 15);
     }
 
     public void addPoints(int value) {
@@ -68,8 +64,8 @@ public class Player {
         resources.put(resource, value);
     }
 
-    public Set getResources() {
-        return resources.entrySet();
+    public String getResources() {
+        return resources.entrySet().toString();
     }
 
     public void addRoadLength(int value) {

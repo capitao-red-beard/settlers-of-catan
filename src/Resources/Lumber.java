@@ -1,12 +1,16 @@
+package Resources;
+
+import Terrain.Forest;
+
 /**
  * Created by Jasper on 05/04/15.
  */
-public class Wool extends Pasture implements Resource {
+public class Lumber extends Forest implements Resource {
 
     private String type;
 
-    public Wool() {
-        type = "Wool";
+    public Lumber() {
+        type = "Lumber";
     }
 
     @Override
