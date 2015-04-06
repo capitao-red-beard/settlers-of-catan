@@ -1,7 +1,7 @@
 /**
  * Created by Jasper on 05/04/15.
  */
-public class Wool implements Resource {
+public class Wool extends Pasture implements Resource {
 
     private String type;
 

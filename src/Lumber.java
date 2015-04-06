@@ -1,7 +1,7 @@
 /**
  * Created by Jasper on 05/04/15.
  */
-public class Lumber implements Resource {
+public class Lumber extends Forest implements Resource {
 
     private String type;
 

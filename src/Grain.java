@@ -1,7 +1,7 @@
 /**
  * Created by Jasper on 05/04/15.
  */
-public class Grain implements Resource {
+public class Grain extends Field implements Resource {
 
     private String type;
 

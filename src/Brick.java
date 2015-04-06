@@ -1,7 +1,7 @@
 /**
  * Created by Jasper on 05/04/15.
  */
-public class Brick implements Resource {
+public class Brick extends Hill implements Resource {
 
     private String type;
 

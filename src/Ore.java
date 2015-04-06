@@ -1,7 +1,7 @@
 /**
  * Created by Jasper on 05/04/15.
  */
-public class Ore implements Resource {
+public class Ore extends Mountain implements Resource {
 
     private String type;
 

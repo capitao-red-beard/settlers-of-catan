@@ -12,21 +12,17 @@ public class Tile {
 
     }
 
-    public Tile(Resource resource) {
-
-    }
-
     public Tile(Terrain terrain, int value) {
         this.terrain = terrain;
         this.value = value;
     }
 
-    public Resource getResource() {
-        return resource;
+    public Terrain getTerrain() {
+        return terrain;
     }
 
-    public void setResource(Resource resource) {
-        this.resource = resource;
+    public void setTerrain(Terrain terrain) {
+        this.terrain = terrain;
     }
 
     public int getValue() {
@@ -46,6 +42,6 @@ public class Tile {
     }
 
     public String toString () {
-        return "Resource: " + resource.getType() + " | Value: " + value;
+        return "Terrain: " + terrain.getType() + " | Value: " + value;
     }
 }
