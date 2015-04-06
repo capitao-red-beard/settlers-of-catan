@@ -14,7 +14,7 @@ public class Game {
         players.add(player);
     }
 
-    public void giveResource(Player player) {
-        
+    public void giveResource(Player player, Resource resource, int value) {
+        player.addResource(resource, value);
     }
 }

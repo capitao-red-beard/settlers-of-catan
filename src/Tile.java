@@ -5,8 +5,17 @@ public class Tile {
 
     private Resource resource;
     private int value;
+    private Construction construction;
 
-    public Tile() {
+    public Tile(Resource resource, int value) {
+        this.resource = resource;
+        this.value = value;
+    }
+
+    public Tile(Resource resource, int value, Construction construction) {
+        this.resource = resource;
+        this.value = value;
+        this.construction = construction;
     }
 
     public Resource getResource() {
@@ -23,6 +32,14 @@ public class Tile {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public void setConstruction(Construction construction) {
+        this.construction = construction;
+    }
+
+    public Construction getConstruction() {
+        return construction;
     }
 
     public String toString () {

@@ -26,4 +26,8 @@ public class Board {
     public void addSettlement(Player player, int row, int col) {
 
     }
+
+    public void addRoad(Player player, int row, int col) {
+
+    }
 }
