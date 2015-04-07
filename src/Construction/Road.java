@@ -1,6 +1,7 @@
 package Construction;
 
 import Game.Player;
+import Game.Tile;
 
 /**
  * Created by Jasper on 05/04/15.
@@ -9,10 +10,12 @@ public class Road implements Construction {
 
     private Player player;
     private String type;
+    private Tile[] tile;
 
-    public Road(Player player) {
-        this.player = player;
+    public Road(Player player, Tile[] tile) {
         type = "Road";
+        this.player = player;
+        this.tile = tile;
     }
 
     @Override

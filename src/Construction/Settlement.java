@@ -1,6 +1,7 @@
 package Construction;
 
 import Game.Player;
+import Game.Tile;
 
 /**
  * Created by Jasper on 05/04/15.
@@ -9,10 +10,12 @@ public class Settlement implements Construction {
 
     private Player player;
     private String type;
+    private Tile[] tile;
 
-    public Settlement(Player player) {
-        this.player = player;
+    public Settlement(Player player, Tile[] tile) {
         type = "Settlement";
+        this.player = player;
+        this.tile = tile;
     }
 
     @Override
