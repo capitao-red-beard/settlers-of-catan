@@ -6,6 +6,7 @@ package Terrain;
 public class Forest implements Terrain {
 
     private String type;
+    private boolean robber;
 
     public Forest() {
         type = "Forest";
@@ -14,5 +15,14 @@ public class Forest implements Terrain {
     @Override
     public String getType() {
         return type;
+    }
+
+    @Override
+    public boolean getRobber() {
+        if (robber == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

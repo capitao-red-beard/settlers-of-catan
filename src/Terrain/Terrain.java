@@ -6,4 +6,5 @@ package Terrain;
 public interface Terrain {
 
     String getType();
+    boolean getRobber();
 }

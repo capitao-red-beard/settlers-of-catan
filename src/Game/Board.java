@@ -1,5 +1,6 @@
 package Game;
 
+import Construction.Robber;
 import Resources.*;
 import Terrain.*;
 
@@ -36,7 +37,7 @@ public class Board {
         tiles[13] = new Tile(new Pasture(), 10);
         tiles[14] = new Tile(new Sea());
         tiles[15] = new Tile(new Sea());
-        tiles[16] = new Tile(new Desert());
+        tiles[16] = new Tile(new Desert(new Robber()));
         tiles[17] = new Tile(new Forest(), 3);
         tiles[18] = new Tile(new Field(), 11);
         tiles[19] = new Tile(new Forest(), 4);
