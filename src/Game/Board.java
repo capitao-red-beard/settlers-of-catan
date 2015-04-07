@@ -1,5 +1,6 @@
 package Game;
 
+import Construction.Construction;
 import Construction.Robber;
 import Resources.*;
 import Terrain.*;

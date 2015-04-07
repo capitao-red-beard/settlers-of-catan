@@ -10,7 +10,7 @@ public class Main {
 
         Tile tile;
 
-        tile = board.getRealTile(18);
+        tile = board.getRealTile(0);
 
         System.out.println(tile.getBorders());
     }

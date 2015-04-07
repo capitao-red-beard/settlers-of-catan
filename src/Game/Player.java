@@ -18,10 +18,12 @@ public class Player {
     private Settlement settlement;
     private Road road;
     private Dice dice;
+    private Board board;
 
-    public Player(String name, String colour) {
+    public Player(String name, String colour, Board board) {
         this.name = name;
         this.colour = colour;
+        this.board = board;
 
         points = 0;
         roadLength = 0;
@@ -77,11 +79,11 @@ public class Player {
         return roadLength;
     }
 
-    public void addSettlements(Construction construction, int value) {
+    public void addConstruction(Construction construction, int value) {
         constructions.put(construction, value);
     }
 
-    public int getSettlements(Construction construction) {
+    public int getConstruction(Construction construction) {
         return constructions.get(construction);
     }
 
