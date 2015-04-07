@@ -12,7 +12,6 @@ public class Desert implements Terrain {
 
     public Desert(Robber robber) {
         type = "Desert";
-
     }
 
     @Override
