@@ -107,6 +107,12 @@ public class Tile {
         center = tile;
     }
 
+    public String getBorders() {
+        return "This tile is to the west of: " + east.toString() + " to the south west of: " + northEast.toString()
+                + " to the north west of: " + southEast.toString() + " to the east of: " + west.toString()
+                + " to the south east of: " + northWest.toString() + " to the north east of: " + southWest.toString();
+    }
+
     public String toString () {
         return "Terrain: " + terrain.getType() + " | Value: " + value;
     }
