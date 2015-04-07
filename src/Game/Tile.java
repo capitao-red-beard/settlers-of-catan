@@ -13,7 +13,7 @@ public class Tile {
     private Construction construction;
     private Robber robber;
 
-    private Tile east, northEast, southEast, west, northWest, southWest;
+    private Tile center, east, northEast, southEast, west, northWest, southWest;
 
     public Tile() {
     }
@@ -99,42 +99,12 @@ public class Tile {
         southWest = tile;
     }
 
-    public void setBorders(Tile tile[]) {
-        if (this.getValue() >= 4) {
-            northEast = tile[this.getValue() - 5];
-        } else {
-            northEast = null;
-        }
+    public Tile getCenter() {
+        return center;
+    }
 
-        if (this.getValue() < 36) {
-            east = tile[this.getValue() + 1];
-        } else {
-            east = null;
-        }
-
-        if (this.getValue() <= 30) {
-            southEast = tile[this.getValue() + 6];
-        } else {
-            southEast = null;
-        }
-
-        if (this.getValue() <= 29) {
-            southWest = tile[this.getValue() + 5];
-        } else {
-            southWest = null;
-        }
-
-        if (this.getValue() > 0) {
-            west = tile[this.getValue() - 1];
-        } else {
-            west = null;
-        }
-
-        if (this.getValue() > 5) {
-            northWest = tile[this.getValue() - 6];
-        } else {
-            northWest = null;
-        }
+    public void setCenter(Tile tile) {
+        center = tile;
     }
 
     public String toString () {
