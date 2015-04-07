@@ -10,12 +10,10 @@ public class Road implements Construction {
 
     private Player player;
     private String type;
-    private Tile[] tile;
 
-    public Road(Player player, Tile[] tile) {
+    public Road(Player player) {
         type = "Road";
         this.player = player;
-        this.tile = tile;
     }
 
     @Override

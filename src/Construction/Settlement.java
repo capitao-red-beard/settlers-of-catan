@@ -10,12 +10,10 @@ public class Settlement implements Construction {
 
     private Player player;
     private String type;
-    private Tile[] tile;
 
-    public Settlement(Player player, Tile[] tile) {
+    public Settlement(Player player) {
         type = "Settlement";
         this.player = player;
-        this.tile = tile;
     }
 
     @Override

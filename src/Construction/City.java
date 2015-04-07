@@ -10,12 +10,10 @@ public class City implements Construction {
 
     private Player player;
     private String type;
-    private Tile[] tile;
 
-    public City(Player player, Tile[] tile) {
+    public City(Player player) {
         type = "City";
         this.player = player;
-        this.tile = tile;
     }
 
     @Override

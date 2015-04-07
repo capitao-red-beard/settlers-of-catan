@@ -10,11 +10,9 @@ public class Robber implements Construction {
 
     private Player player;
     private String type;
-    private Tile[] tile;
 
-    public Robber(Tile[] tile) {
+    public Robber() {
         type = "Robber";
-        this.tile = tile;
     }
 
     @Override
