@@ -99,6 +99,44 @@ public class Tile {
         southWest = tile;
     }
 
+    public void setBorders(Tile tile[]) {
+        if (this.getValue() >= 4) {
+            northEast = tile[this.getValue() - 5];
+        } else {
+            northEast = null;
+        }
+
+        if (this.getValue() < 36) {
+            east = tile[this.getValue() + 1];
+        } else {
+            east = null;
+        }
+
+        if (this.getValue() <= 30) {
+            southEast = tile[this.getValue() + 6];
+        } else {
+            southEast = null;
+        }
+
+        if (this.getValue() <= 29) {
+            southWest = tile[this.getValue() + 5];
+        } else {
+            southWest = null;
+        }
+
+        if (this.getValue() > 0) {
+            west = tile[this.getValue() - 1];
+        } else {
+            west = null;
+        }
+
+        if (this.getValue() > 5) {
+            northWest = tile[this.getValue() - 6];
+        } else {
+            northWest = null;
+        }
+    }
+
     public String toString () {
         return "Terrain: " + terrain.getType() + " | Value: " + value;
     }

@@ -13,13 +13,6 @@ public class Board {
         tiles = new Tile[37];
 
         tiles[0] = new Tile(new Harbor());
-        tiles[0].setNorthEast(null);
-        tiles[0].setEast(tiles[1]);
-        tiles[0].setSouthEast(tiles[5]);
-        tiles[0].setSouthWest(tiles[4]);
-        tiles[0].setWest(null);
-        tiles[0].setNorthWest(null);
-
         tiles[1] = new Tile(new Sea());
         tiles[2] = new Tile(new Harbor());
         tiles[3] = new Tile(new Sea());
