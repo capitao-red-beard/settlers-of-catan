@@ -17,6 +17,7 @@ public class Player {
     private City city;
     private Settlement settlement;
     private Road road;
+    private Dice dice;
 
     public Player(String name, String colour) {
         this.name = name;
@@ -82,6 +83,10 @@ public class Player {
 
     public int getSettlements(Construction construction) {
         return constructions.get(construction);
+    }
+
+    public void roll() {
+        int rolled = dice.roll();
     }
 
     public String toString() {
