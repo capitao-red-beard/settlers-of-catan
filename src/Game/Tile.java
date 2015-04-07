@@ -108,9 +108,8 @@ public class Tile {
     }
 
     public String getBorders() {
-        return "This tile is to the west of: " + east.toString() + " to the south west of: " + northEast.toString()
-                + " to the north west of: " + southEast.toString() + " to the east of: " + west.toString()
-                + " to the south east of: " + northWest.toString() + " to the north east of: " + southWest.toString();
+        return "East: " + east + " North East: " + northEast + " South East: " + southEast + " West: " + west
+                + " North West: " + northWest + " South West: " + southWest;
     }
 
     public String toString () {
