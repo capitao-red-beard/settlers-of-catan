@@ -1,6 +1,5 @@
 package Game;
 
-import Construction.Construction;
 import Construction.Robber;
 import Resources.*;
 import Terrain.*;
@@ -9,6 +8,8 @@ import Terrain.*;
  * Created by Jasper on 30/03/15.
  */
 public class Board {
+
+    private Intersection intersection;
 
     private Resource resource;
     private Brick brick;
@@ -19,7 +20,9 @@ public class Board {
 
     private Tile[] tiles;
 
-    public Board() {
+    public Board(Intersection intersection) {
+        this.intersection = intersection;
+
         tiles = new Tile[37];
 
         tiles[0] = new Tile(new Harbor(resource, 3));

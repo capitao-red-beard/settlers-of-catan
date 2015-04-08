@@ -20,10 +20,9 @@ public class Player {
     private Dice dice;
     private Board board;
 
-    public Player(String name, String colour, Board board) {
+    public Player(String name, String colour) {
         this.name = name;
         this.colour = colour;
-        this.board = board;
 
         points = 0;
         roadLength = 0;
