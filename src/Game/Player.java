@@ -14,11 +14,6 @@ public class Player {
     private String name, colour;
     private HashMap<Resource, Integer> resources;
     private HashMap<Construction, Integer> constructions;
-    private City city;
-    private Settlement settlement;
-    private Road road;
-    private Dice dice;
-    private Board board;
 
     public Player(String name, String colour) {
         this.name = name;
@@ -86,7 +81,7 @@ public class Player {
         return constructions.get(construction);
     }
 
-    public void roll() {
+    public void roll(Dice dice) {
         int rolled = dice.roll();
     }
 
