@@ -24,4 +24,8 @@ public class Robber implements Construction {
     public String getType() {
         return null;
     }
+
+    public void moveRobber(Tile tile) {
+        tile.setRobber(true);
+    }
 }

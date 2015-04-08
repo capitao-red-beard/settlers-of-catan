@@ -1,3 +1,4 @@
+import Construction.Robber;
 import Game.*;
 
 /**
@@ -8,7 +9,13 @@ public class Main {
     public static void main (String[] args) {
         Board board = new Board();
 
+        Player player = new Player("Jasper", "Orange");
+
+        Robber robber = new Robber();
+
         Tile tile;
+
+        player.moveRobber(robber, board.getRealTile(0));
 
         tile = board.getRealTile(0);
 

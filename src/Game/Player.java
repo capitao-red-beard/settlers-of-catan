@@ -90,6 +90,10 @@ public class Player {
         int rolled = dice.roll();
     }
 
+    public void moveRobber(Robber robber, Tile tile) {
+        robber.moveRobber(tile);
+    }
+
     public String toString() {
         return name + colour;
     }

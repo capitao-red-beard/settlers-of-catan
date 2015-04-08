@@ -11,7 +11,7 @@ public class Tile {
     private Terrain terrain;
     private int value;
     private Construction construction;
-    private Robber robber;
+    private boolean robber;
 
     private Tile center, east, northEast, southEast, west, northWest, southWest;
 
@@ -43,8 +43,8 @@ public class Tile {
         this.value = value;
     }
 
-    public String getConstruction() {
-        return construction.getType();
+    public Construction getConstruction() {
+        return construction;
     }
 
     public void setConstruction(Construction construction) {
@@ -107,9 +107,17 @@ public class Tile {
         center = tile;
     }
 
+    public void setRobber(boolean status) {
+        robber = status;
+    }
+
+    public boolean getRobber() {
+        return robber;
+    }
+
     public String getBorders() {
         return "East: (" + east + ")\nNorth East: (" + northEast + ")\nSouth East: (" + southEast + ")\nWest: (" + west
-                + ")\nNorth West: (" + northWest + ")\nSouth West: (" + southWest + ")";
+                + ")\nNorth West: (" + northWest + ")\nSouth West: (" + southWest + ")\nRobber: (" + robber + ")";
     }
 
     public String toString () {

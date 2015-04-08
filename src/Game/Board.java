@@ -9,8 +9,6 @@ import Terrain.*;
  */
 public class Board {
 
-    private Intersection intersection;
-
     private Resource resource;
     private Brick brick;
     private Grain grain;
@@ -20,9 +18,7 @@ public class Board {
 
     private Tile[] tiles;
 
-    public Board(Intersection intersection) {
-        this.intersection = intersection;
-
+    public Board() {
         tiles = new Tile[37];
 
         tiles[0] = new Tile(new Harbor(resource, 3));
