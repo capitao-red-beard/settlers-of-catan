@@ -1,7 +1,7 @@
 package Construction;
 
 import Game.Player;
-import Game.Tile;
+import Board.Tile;
 
 /**
  * Created by Jasper on 30/03/15.

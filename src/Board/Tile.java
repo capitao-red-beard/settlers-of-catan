@@ -1,10 +1,6 @@
-package Game;
+package Board;
 
 import Terrain.*;
-import Construction.*;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 /**
  * Created by Jasper on 05/04/15.
