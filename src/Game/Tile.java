@@ -3,6 +3,9 @@ package Game;
 import Terrain.*;
 import Construction.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  * Created by Jasper on 05/04/15.
  */
@@ -10,9 +13,7 @@ public class Tile {
 
     private Terrain terrain;
     private int value;
-    private Construction construction;
     private boolean robber;
-    private Intersection intersection;
 
     private Tile center, east, northEast, southEast, west, northWest, southWest;
 
@@ -42,14 +43,6 @@ public class Tile {
 
     public void setValue(int value) {
         this.value = value;
-    }
-
-    public Construction getConstruction() {
-        return construction;
-    }
-
-    public void setConstruction(Construction construction) {
-        this.construction = construction;
     }
 
     public Tile getEast() {
@@ -115,14 +108,6 @@ public class Tile {
 
     public void setRobber(boolean status) {
         robber = status;
-    }
-
-    public void setIntersection(Intersection intersection) {
-        this.intersection = intersection;
-    }
-
-    public Intersection intersection() {
-        return intersection;
     }
 
     public String getBorders() {

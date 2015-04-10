@@ -17,11 +17,13 @@ public class Board {
     private Wool wool;
 
     private Tile[] tiles;
-    private Intersection[] intersections;
+    private Triple[] triples;
+    private Double[] doubles;
 
     public Board() {
         tiles = new Tile[37];
-        intersections = new Intersection[53];
+        triples = new Triple[53];
+        doubles = new Double[75];
 
         tiles[0] = new Tile(new Harbor(resource, 3));
         tiles[1] = new Tile(new Sea());
@@ -358,65 +360,139 @@ public class Board {
         tiles[36].setEast(null);
         tiles[36].setWest(tiles[35]);
 
-        intersections[0].addTiles(tiles[0], tiles[4], tiles[5]);
-        intersections[1].addTiles(tiles[0], tiles[1], tiles[5]);
-        intersections[2].addTiles(tiles[1], tiles[5], tiles[6]);
-        intersections[3].addTiles(tiles[1], tiles[2], tiles[6]);
-        intersections[4].addTiles(tiles[2], tiles[6], tiles[7]);
-        intersections[5].addTiles(tiles[2], tiles[3], tiles[7]);
-        intersections[6].addTiles(tiles[3], tiles[7], tiles[8]);
-        intersections[7].addTiles(tiles[4], tiles[5], tiles[10]);
-        intersections[8].addTiles(tiles[4], tiles[9], tiles[10]);
-        intersections[9].addTiles(tiles[5], tiles[6], tiles[11]);
-        intersections[10].addTiles(tiles[6], tiles[11], tiles[12]);
-        intersections[11].addTiles(tiles[6], tiles[7], tiles[12]);
-        intersections[12].addTiles(tiles[7], tiles[12], tiles[13]);
-        intersections[13].addTiles(tiles[7], tiles[8], tiles[13]);
-        intersections[14].addTiles(tiles[9], tiles[10], tiles[16]);
-        intersections[15].addTiles(tiles[9], tiles[15], tiles[16]);
-        intersections[16].addTiles(tiles[10], tiles[16], tiles[17]);
-        intersections[17].addTiles(tiles[10], tiles[11], tiles[17]);
-        intersections[18].addTiles(tiles[11], tiles[17], tiles[18]);
-        intersections[19].addTiles(tiles[11], tiles[12], tiles[18]);
-        intersections[20].addTiles(tiles[12], tiles[18], tiles[19]);
-        intersections[21].addTiles(tiles[12], tiles[13], tiles[19]);
-        intersections[22].addTiles(tiles[13], tiles[19], tiles[20]);
-        intersections[23].addTiles(tiles[13], tiles[14], tiles[20]);
-        intersections[24].addTiles(tiles[14], tiles[20], tiles[21]);
-        intersections[25].addTiles(tiles[15], tiles[16], tiles[22]);
-        intersections[26].addTiles(tiles[16], tiles[22], tiles[23]);
-        intersections[27].addTiles(tiles[16], tiles[17], tiles[23]);
-        intersections[28].addTiles(tiles[17], tiles[23], tiles[24]);
-        intersections[29].addTiles(tiles[17], tiles[18], tiles[24]);
-        intersections[30].addTiles(tiles[18], tiles[24], tiles[25]);
-        intersections[31].addTiles(tiles[18], tiles[19], tiles[25]);
-        intersections[32].addTiles(tiles[19], tiles[25], tiles[26]);
-        intersections[33].addTiles(tiles[19], tiles[20], tiles[26]);
-        intersections[34].addTiles(tiles[20], tiles[26], tiles[27]);
-        intersections[35].addTiles(tiles[20], tiles[21], tiles[27]);
-        intersections[36].addTiles(tiles[22], tiles[23], tiles[28]);
-        intersections[37].addTiles(tiles[23], tiles[28], tiles[29]);
-        intersections[38].addTiles(tiles[23], tiles[24], tiles[29]);
-        intersections[39].addTiles(tiles[24], tiles[29], tiles[30]);
-        intersections[40].addTiles(tiles[24], tiles[25], tiles[30]);
-        intersections[41].addTiles(tiles[25], tiles[30], tiles[31]);
-        intersections[42].addTiles(tiles[25], tiles[26], tiles[31]);
-        intersections[43].addTiles(tiles[26], tiles[31], tiles[32]);
-        intersections[44].addTiles(tiles[26], tiles[27], tiles[32]);
-        intersections[45].addTiles(tiles[28], tiles[29], tiles[33]);
-        intersections[46].addTiles(tiles[29], tiles[33], tiles[34]);
-        intersections[47].addTiles(tiles[29], tiles[30], tiles[34]);
-        intersections[48].addTiles(tiles[30], tiles[34], tiles[35]);
-        intersections[49].addTiles(tiles[30], tiles[31], tiles[35]);
-        intersections[50].addTiles(tiles[31], tiles[35], tiles[36]);
-        intersections[51].addTiles(tiles[31], tiles[32], tiles[36]);
+        triples[0] = new Triple(tiles[0], tiles[4], tiles[5]);
+        triples[1] = new Triple(tiles[0], tiles[1], tiles[5]);
+        triples[2] = new Triple(tiles[1], tiles[5], tiles[6]);
+        triples[3] = new Triple(tiles[1], tiles[2], tiles[6]);
+        triples[4] = new Triple(tiles[2], tiles[6], tiles[7]);
+        triples[5] = new Triple(tiles[2], tiles[3], tiles[7]);
+        triples[6] = new Triple(tiles[3], tiles[7], tiles[8]);
+        triples[7] = new Triple(tiles[4], tiles[5], tiles[10]);
+        triples[8] = new Triple(tiles[4], tiles[9], tiles[10]);
+        triples[9] = new Triple(tiles[5], tiles[6], tiles[11]);
+        triples[10] = new Triple(tiles[6], tiles[11], tiles[12]);
+        triples[11] = new Triple(tiles[6], tiles[7], tiles[12]);
+        triples[12] = new Triple(tiles[7], tiles[12], tiles[13]);
+        triples[13] = new Triple(tiles[7], tiles[8], tiles[13]);
+        triples[14] = new Triple(tiles[8], tiles[13], tiles[14]);
+        triples[15] = new Triple(tiles[9], tiles[10], tiles[16]);
+        triples[16] = new Triple(tiles[9], tiles[15], tiles[16]);
+        triples[17] = new Triple(tiles[10], tiles[16], tiles[17]);
+        triples[18] = new Triple(tiles[10], tiles[11], tiles[17]);
+        triples[19] = new Triple(tiles[11], tiles[17], tiles[18]);
+        triples[20] = new Triple(tiles[11], tiles[12], tiles[18]);
+        triples[21] = new Triple(tiles[12], tiles[18], tiles[19]);
+        triples[22] = new Triple(tiles[12], tiles[13], tiles[19]);
+        triples[23] = new Triple(tiles[13], tiles[19], tiles[20]);
+        triples[24] = new Triple(tiles[13], tiles[14], tiles[20]);
+        triples[25] = new Triple(tiles[14], tiles[20], tiles[21]);
+        triples[26] = new Triple(tiles[15], tiles[16], tiles[22]);
+        triples[27] = new Triple(tiles[16], tiles[22], tiles[23]);
+        triples[28] = new Triple(tiles[16], tiles[17], tiles[23]);
+        triples[29] = new Triple(tiles[17], tiles[23], tiles[24]);
+        triples[30] = new Triple(tiles[17], tiles[18], tiles[24]);
+        triples[31] = new Triple(tiles[18], tiles[24], tiles[25]);
+        triples[32] = new Triple(tiles[18], tiles[19], tiles[25]);
+        triples[33] = new Triple(tiles[19], tiles[25], tiles[26]);
+        triples[34] = new Triple(tiles[19], tiles[20], tiles[26]);
+        triples[35] = new Triple(tiles[20], tiles[26], tiles[27]);
+        triples[36] = new Triple(tiles[20], tiles[21], tiles[27]);
+        triples[37] = new Triple(tiles[22], tiles[23], tiles[28]);
+        triples[38] = new Triple(tiles[23], tiles[28], tiles[29]);
+        triples[39] = new Triple(tiles[23], tiles[24], tiles[29]);
+        triples[40] = new Triple(tiles[24], tiles[29], tiles[30]);
+        triples[41] = new Triple(tiles[24], tiles[25], tiles[30]);
+        triples[42] = new Triple(tiles[25], tiles[30], tiles[31]);
+        triples[43] = new Triple(tiles[25], tiles[26], tiles[31]);
+        triples[44] = new Triple(tiles[26], tiles[31], tiles[32]);
+        triples[45] = new Triple(tiles[26], tiles[27], tiles[32]);
+        triples[46] = new Triple(tiles[28], tiles[29], tiles[33]);
+        triples[47] = new Triple(tiles[29], tiles[33], tiles[34]);
+        triples[48] = new Triple(tiles[29], tiles[30], tiles[34]);
+        triples[49] = new Triple(tiles[30], tiles[34], tiles[35]);
+        triples[50] = new Triple(tiles[30], tiles[31], tiles[35]);
+        triples[51] = new Triple(tiles[31], tiles[35], tiles[36]);
+        triples[52] = new Triple(tiles[31], tiles[32], tiles[36]);
+
+        doubles[0] = new Double(tiles[4], tiles[5]);
+        doubles[1] = new Double(tiles[0], tiles[5]);
+        doubles[2] = new Double(tiles[1], tiles[5]);
+        doubles[3] = new Double(tiles[5], tiles[6]);
+        doubles[4] = new Double(tiles[1], tiles[6]);
+        doubles[5] = new Double(tiles[2], tiles[6]);
+        doubles[6] = new Double(tiles[6], tiles[7]);
+        doubles[7] = new Double(tiles[2], tiles[7]);
+        doubles[8] = new Double(tiles[3], tiles[7]);
+        doubles[9] = new Double(tiles[7], tiles[8]);
+        doubles[10] = new Double(tiles[9], tiles[10]);
+        doubles[11] = new Double(tiles[4], tiles[10]);
+        doubles[12] = new Double(tiles[5], tiles[10]);
+        doubles[13] = new Double(tiles[10], tiles[11]);
+        doubles[14] = new Double(tiles[5], tiles[11]);
+        doubles[15] = new Double(tiles[6], tiles[11]);
+        doubles[16] = new Double(tiles[11], tiles[12]);
+        doubles[17] = new Double(tiles[6], tiles[12]);
+        doubles[18] = new Double(tiles[7], tiles[12]);
+        doubles[19] = new Double(tiles[7], tiles[13]);
+        doubles[20] = new Double(tiles[8], tiles[13]);
+        doubles[21] = new Double(tiles[13], tiles[14]);
+        doubles[22] = new Double(tiles[9], tiles[16]);
+        doubles[23] = new Double(tiles[10], tiles[16]);
+        doubles[24] = new Double(tiles[10], tiles[17]);
+        doubles[25] = new Double(tiles[16], tiles[17]);
+        doubles[26] = new Double(tiles[11], tiles[17]);
+        doubles[27] = new Double(tiles[11], tiles[18]);
+        doubles[28] = new Double(tiles[17], tiles[18]);
+        doubles[29] = new Double(tiles[12], tiles[18]);
+        doubles[30] = new Double(tiles[12], tiles[19]);
+        doubles[31] = new Double(tiles[18], tiles[19]);
+        doubles[32] = new Double(tiles[13], tiles[19]);
+        doubles[33] = new Double(tiles[13], tiles[20]);
+        doubles[34] = new Double(tiles[19], tiles[20]);
+        doubles[35] = new Double(tiles[14], tiles[20]);
+        doubles[36] = new Double(tiles[20], tiles[21]);
+        doubles[37] = new Double(tiles[22], tiles[23]);
+        doubles[38] = new Double(tiles[16], tiles[23]);
+        doubles[39] = new Double(tiles[17], tiles[23]);
+        doubles[40] = new Double(tiles[23], tiles[24]);
+        doubles[41] = new Double(tiles[17], tiles[24]);
+        doubles[42] = new Double(tiles[18], tiles[24]);
+        doubles[43] = new Double(tiles[24], tiles[25]);
+        doubles[44] = new Double(tiles[18], tiles[25]);
+        doubles[45] = new Double(tiles[19], tiles[25]);
+        doubles[46] = new Double(tiles[25], tiles[26]);
+        doubles[47] = new Double(tiles[19], tiles[26]);
+        doubles[48] = new Double(tiles[20], tiles[26]);
+        doubles[49] = new Double(tiles[26], tiles[27]);
+        doubles[50] = new Double(tiles[20], tiles[27]);
+        doubles[51] = new Double(tiles[23], tiles[28]);
+        doubles[52] = new Double(tiles[28], tiles[29]);
+        doubles[53] = new Double(tiles[23], tiles[29]);
+        doubles[54] = new Double(tiles[24], tiles[29]);
+        doubles[55] = new Double(tiles[29], tiles[30]);
+        doubles[56] = new Double(tiles[24], tiles[30]);
+        doubles[57] = new Double(tiles[25], tiles[30]);
+        doubles[58] = new Double(tiles[30], tiles[31]);
+        doubles[59] = new Double(tiles[25], tiles[31]);
+        doubles[60] = new Double(tiles[26], tiles[31]);
+        doubles[61] = new Double(tiles[26], tiles[32]);
+        doubles[62] = new Double(tiles[29], tiles[33]);
+        doubles[63] = new Double(tiles[29], tiles[34]);
+        doubles[64] = new Double(tiles[30], tiles[34]);
+        doubles[65] = new Double(tiles[30], tiles[35]);
+        doubles[66] = new Double(tiles[31], tiles[35]);
+        doubles[67] = new Double(tiles[31], tiles[32]);
     }
 
-    public Tile getRealTile(int number) {
+    public Tile getTile(int number) {
         return tiles[number];
     }
 
-    public String getTile(int number) {
-        return tiles[number].toString();
+    public Triple getTriple(int number) {
+        return triples[number];
+    }
+
+    public Double getDouble(int number) {
+        return doubles[number];
     }
 }
