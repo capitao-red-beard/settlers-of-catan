@@ -1,5 +1,6 @@
 package Game;
 
+import Board.Intersection;
 import Board.Tile;
 import Construction.*;
 import Resources.Resource;
@@ -15,6 +16,7 @@ public class Player {
     private String name, colour;
     private HashMap<Resource, Integer> resources;
     private HashMap<Construction, Integer> constructions;
+    private Construction road, city, settlement;
 
     public Player(String name, String colour) {
         this.name = name;
@@ -26,6 +28,14 @@ public class Player {
 
         resources = new HashMap<Resource, Integer>();
         constructions = new HashMap<Construction, Integer>();
+
+        road = new Road(this);
+        city = new City(this);
+        settlement = new Settlement(this);
+
+        constructions.put(road, 15);
+        constructions.put(city, 5);
+        constructions.put(settlement, 10);
     }
 
     public void addPoints(int value) {
@@ -88,6 +98,28 @@ public class Player {
 
     public void moveRobber(Robber robber, Tile tile) {
         robber.moveRobber(tile);
+    }
+
+    // this may not be correct
+    public void buildSettlement(Intersection intersection) {
+        settlement.setIntersection(intersection);
+        constructions.remove(settlement, 1);
+    }
+
+    // this may not be correct
+    public void buildCity(Intersection intersection) {
+        if (intersection.getConstruction() == settlement) {
+            city.setIntersection(intersection);
+            constructions.remove(city, 1);
+            constructions.put(settlement, 1);
+        }
+    }
+
+    // this may not be correct
+    public void buildRoad(Intersection intersection) {
+        road.setIntersection(intersection);
+        constructions.remove(road, 1);
+
     }
 
     public String toString() {

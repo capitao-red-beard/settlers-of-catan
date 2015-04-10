@@ -7,5 +7,6 @@ import Construction.Construction;
  */
 public interface Intersection {
 
-    void addConstruction(Construction construction);
+    Construction getConstruction();
+    void setConstruction(Construction construction);
 }

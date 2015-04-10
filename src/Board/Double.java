@@ -18,7 +18,12 @@ public class Double implements Intersection {
     }
 
     @Override
-    public void addConstruction(Construction construction) {
+    public Construction getConstruction() {
+        return construction;
+    }
+
+    @Override
+    public void setConstruction(Construction construction) {
         if (this.construction != null) {
             this.construction = construction;
         } else {
