@@ -17,9 +17,11 @@ public class Board {
     private Wool wool;
 
     private Tile[] tiles;
+    private Intersection[] intersections;
 
     public Board() {
         tiles = new Tile[37];
+        intersections = new Intersection[53];
 
         tiles[0] = new Tile(new Harbor(resource, 3));
         tiles[1] = new Tile(new Sea());
@@ -355,6 +357,59 @@ public class Board {
         tiles[36].setSouthWest(null);
         tiles[36].setEast(null);
         tiles[36].setWest(tiles[35]);
+
+        intersections[0].addTiles(tiles[0], tiles[4], tiles[5]);
+        intersections[1].addTiles(tiles[0], tiles[1], tiles[5]);
+        intersections[2].addTiles(tiles[1], tiles[5], tiles[6]);
+        intersections[3].addTiles(tiles[1], tiles[2], tiles[6]);
+        intersections[4].addTiles(tiles[2], tiles[6], tiles[7]);
+        intersections[5].addTiles(tiles[2], tiles[3], tiles[7]);
+        intersections[6].addTiles(tiles[3], tiles[7], tiles[8]);
+        intersections[7].addTiles(tiles[4], tiles[5], tiles[10]);
+        intersections[8].addTiles(tiles[4], tiles[9], tiles[10]);
+        intersections[9].addTiles(tiles[5], tiles[6], tiles[11]);
+        intersections[10].addTiles(tiles[6], tiles[11], tiles[12]);
+        intersections[11].addTiles(tiles[6], tiles[7], tiles[12]);
+        intersections[12].addTiles(tiles[7], tiles[12], tiles[13]);
+        intersections[13].addTiles(tiles[7], tiles[8], tiles[13]);
+        intersections[14].addTiles(tiles[9], tiles[10], tiles[16]);
+        intersections[15].addTiles(tiles[9], tiles[15], tiles[16]);
+        intersections[16].addTiles(tiles[10], tiles[16], tiles[17]);
+        intersections[17].addTiles(tiles[10], tiles[11], tiles[17]);
+        intersections[18].addTiles(tiles[11], tiles[17], tiles[18]);
+        intersections[19].addTiles(tiles[11], tiles[12], tiles[18]);
+        intersections[20].addTiles(tiles[12], tiles[18], tiles[19]);
+        intersections[21].addTiles(tiles[12], tiles[13], tiles[19]);
+        intersections[22].addTiles(tiles[13], tiles[19], tiles[20]);
+        intersections[23].addTiles(tiles[13], tiles[14], tiles[20]);
+        intersections[24].addTiles(tiles[14], tiles[20], tiles[21]);
+        intersections[25].addTiles(tiles[15], tiles[16], tiles[22]);
+        intersections[26].addTiles(tiles[16], tiles[22], tiles[23]);
+        intersections[27].addTiles(tiles[16], tiles[17], tiles[23]);
+        intersections[28].addTiles(tiles[17], tiles[23], tiles[24]);
+        intersections[29].addTiles(tiles[17], tiles[18], tiles[24]);
+        intersections[30].addTiles(tiles[18], tiles[24], tiles[25]);
+        intersections[31].addTiles(tiles[18], tiles[19], tiles[25]);
+        intersections[32].addTiles(tiles[19], tiles[25], tiles[26]);
+        intersections[33].addTiles(tiles[19], tiles[20], tiles[26]);
+        intersections[34].addTiles(tiles[20], tiles[26], tiles[27]);
+        intersections[35].addTiles(tiles[20], tiles[21], tiles[27]);
+        intersections[36].addTiles(tiles[22], tiles[23], tiles[28]);
+        intersections[37].addTiles(tiles[23], tiles[28], tiles[29]);
+        intersections[38].addTiles(tiles[23], tiles[24], tiles[29]);
+        intersections[39].addTiles(tiles[24], tiles[29], tiles[30]);
+        intersections[40].addTiles(tiles[24], tiles[25], tiles[30]);
+        intersections[41].addTiles(tiles[25], tiles[30], tiles[31]);
+        intersections[42].addTiles(tiles[25], tiles[26], tiles[31]);
+        intersections[43].addTiles(tiles[26], tiles[31], tiles[32]);
+        intersections[44].addTiles(tiles[26], tiles[27], tiles[32]);
+        intersections[45].addTiles(tiles[28], tiles[29], tiles[33]);
+        intersections[46].addTiles(tiles[29], tiles[33], tiles[34]);
+        intersections[47].addTiles(tiles[29], tiles[30], tiles[34]);
+        intersections[48].addTiles(tiles[30], tiles[34], tiles[35]);
+        intersections[49].addTiles(tiles[30], tiles[31], tiles[35]);
+        intersections[50].addTiles(tiles[31], tiles[35], tiles[36]);
+        intersections[51].addTiles(tiles[31], tiles[32], tiles[36]);
     }
 
     public Tile getRealTile(int number) {

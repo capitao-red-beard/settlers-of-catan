@@ -12,6 +12,7 @@ public class Tile {
     private int value;
     private Construction construction;
     private boolean robber;
+    private Intersection intersection;
 
     private Tile center, east, northEast, southEast, west, northWest, southWest;
 
@@ -107,12 +108,21 @@ public class Tile {
         center = tile;
     }
 
+
+    public boolean getRobber() {
+        return robber;
+    }
+
     public void setRobber(boolean status) {
         robber = status;
     }
 
-    public boolean getRobber() {
-        return robber;
+    public void setIntersection(Intersection intersection) {
+        this.intersection = intersection;
+    }
+
+    public Intersection intersection() {
+        return intersection;
     }
 
     public String getBorders() {
