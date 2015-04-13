@@ -3,7 +3,7 @@ package Game;
 import Board.Intersection;
 import Board.Tile;
 import Construction.*;
-import Resources.Resource;
+import Resources.*;
 
 import java.util.HashMap;
 
@@ -16,7 +16,6 @@ public class Player {
     private String name, colour;
     private HashMap<Resource, Integer> resources;
     private HashMap<Construction, Integer> constructions;
-    private Construction road, city, settlement;
 
     public Player(String name, String colour) {
         this.name = name;
@@ -29,12 +28,24 @@ public class Player {
         resources = new HashMap<Resource, Integer>();
         constructions = new HashMap<Construction, Integer>();
 
-        road = new Road(this);
-        city = new City(this);
-        settlement = new Settlement(this);
+        Brick brick = new Brick();
+        Grain grain = new Grain();
+        Lumber lumber = new Lumber();
+        Ore ore = new Ore();
+        Wool wool = new Wool();
 
-        constructions.put(road, 15);
+        resources.put(brick, 0);
+        resources.put(grain, 0);
+        resources.put(lumber, 0);
+        resources.put(ore, 0);
+        resources.put(wool, 0);
+
+        City city = new City(this);
+        Road road = new Road(this);
+        Settlement settlement = new Settlement(this);
+
         constructions.put(city, 5);
+        constructions.put(road, 15);
         constructions.put(settlement, 10);
     }
 
@@ -100,26 +111,20 @@ public class Player {
         robber.moveRobber(tile);
     }
 
-    // this may not be correct
     public void buildSettlement(Intersection intersection) {
-        settlement.setIntersection(intersection);
-        constructions.remove(settlement, 1);
+        intersection.setConstruction(new Settlement(this));
+        points++;
     }
 
-    // this may not be correct
-    public void buildCity(Intersection intersection) {
+    public void buildCity(Intersection intersection, Settlement settlement) {
         if (intersection.getConstruction() == settlement) {
-            city.setIntersection(intersection);
-            constructions.remove(city, 1);
-            constructions.put(settlement, 1);
+            intersection.setConstruction(new City(this));
+            points += 2;
         }
     }
 
-    // this may not be correct
     public void buildRoad(Intersection intersection) {
-        road.setIntersection(intersection);
-        constructions.remove(road, 1);
-
+        intersection.setConstruction(new Road(this));
     }
 
     public String toString() {

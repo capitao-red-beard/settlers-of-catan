@@ -23,6 +23,11 @@ public class City implements Construction {
     }
 
     @Override
+    public void setOwner(Player player) {
+        this.player = player;
+    }
+
+    @Override
     public String getType() {
         return type;
     }
