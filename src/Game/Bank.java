@@ -27,9 +27,10 @@ public class Bank {
 
     public void giveResource(Player player, Resource resource, int value) {
         player.addResource(resource, value);
+        resources.put(resource, resources.get(resource) - value);
     }
 
     public void addResource(Resource resource, int value) {
-        resources.put(resource, value);
+        resources.put(resource, resources.get(resource) + value);
     }
 }
