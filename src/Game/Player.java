@@ -15,7 +15,6 @@ public class Player {
     private int points, roadLength, armySize;
     private String name, colour;
     private HashMap<Resource, Integer> resources;
-    private HashMap<Construction, Integer> constructions;
 
     public Player(String name, String colour) {
         this.name = name;
@@ -26,7 +25,6 @@ public class Player {
         armySize = 0;
 
         resources = new HashMap<Resource, Integer>();
-        constructions = new HashMap<Construction, Integer>();
 
         Brick brick = new Brick();
         Grain grain = new Grain();
@@ -39,14 +37,6 @@ public class Player {
         resources.put(lumber, 0);
         resources.put(ore, 0);
         resources.put(wool, 0);
-
-        City city = new City(this);
-        Road road = new Road(this);
-        Settlement settlement = new Settlement(this);
-
-        constructions.put(city, 5);
-        constructions.put(road, 15);
-        constructions.put(settlement, 10);
     }
 
     public void addPoints(int value) {
@@ -74,13 +64,12 @@ public class Player {
     }
 
     public void addResource(Resource resource, int value) {
-        for (int i = 0; i < value; ++i) {
-            resources.remove(resource);
-        }
+            resources.put(resource, resources.get(resource) + value);
     }
 
-    public void removeResource(Resource resource, int value) {
-        resources.put(resource, value);
+    public void removeResource(Bank bank, Resource resource, int value) {
+        bank.addResource(resource, value);
+        resources.put(resource, resources.get(resource) - value);
     }
 
     public String getResources() {
@@ -93,14 +82,6 @@ public class Player {
 
     public int getRoadLength() {
         return roadLength;
-    }
-
-    public void addConstruction(Construction construction, int value) {
-        constructions.put(construction, value);
-    }
-
-    public int getConstruction(Construction construction) {
-        return constructions.get(construction);
     }
 
     public void roll(Dice dice) {
