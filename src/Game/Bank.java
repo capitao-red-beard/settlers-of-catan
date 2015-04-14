@@ -24,4 +24,12 @@ public class Bank {
         resources.put(ore, 50);
         resources.put(wool, 50);
     }
+
+    public void giveResource(Player player, Resource resource, int value) {
+        player.addResource(resource, value);
+    }
+
+    public void addResource(Resource resource, int value) {
+        resources.put(resource, value);
+    }
 }
