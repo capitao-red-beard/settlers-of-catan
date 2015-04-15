@@ -1,6 +1,5 @@
 package Game;
 
-import Board.Intersection;
 import Board.Tile;
 import Construction.*;
 import Resources.*;
@@ -90,22 +89,6 @@ public class Player {
 
     public void moveRobber(Robber robber, Tile tile) {
         robber.moveRobber(tile);
-    }
-
-    public void buildSettlement(Intersection intersection) {
-        intersection.setConstruction(new Settlement(this));
-        points++;
-    }
-
-    public void buildCity(Intersection intersection, Settlement settlement) {
-        if (intersection.getConstruction() == settlement) {
-            intersection.setConstruction(new City(this));
-            points += 2;
-        }
-    }
-
-    public void buildRoad(Intersection intersection) {
-        intersection.setConstruction(new Road(this));
     }
 
     public String toString() {

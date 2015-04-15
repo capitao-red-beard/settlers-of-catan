@@ -1,6 +1,5 @@
 package Construction;
 
-import Board.Intersection;
 import Game.Player;
 
 /**
@@ -10,7 +9,6 @@ public class City implements Construction {
 
     private Player player;
     private String type;
-    private Intersection intersection;
 
     public City(Player player) {
         type = "City";
@@ -35,15 +33,5 @@ public class City implements Construction {
     @Override
     public String toString() {
         return "Construct: " + type + " Owner: " + player.toString();
-    }
-
-    @Override
-    public Intersection getIntersection() {
-        return intersection;
-    }
-
-    @Override
-    public void setIntersection(Intersection intersection) {
-        this.intersection = intersection;
     }
 }

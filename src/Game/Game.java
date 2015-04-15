@@ -1,7 +1,5 @@
 package Game;
 
-import Resources.Resource;
-
 import java.util.ArrayList;
 
 /**
@@ -9,16 +7,15 @@ import java.util.ArrayList;
  */
 public class Game {
     private ArrayList<Player> players;
+    private Bank bank;
+    private Dice dice;
 
     public Game() {
         players = new ArrayList<Player>();
+        bank = new Bank();
     }
 
     public void addPlayer(Player player) {
         players.add(player);
-    }
-
-    public void giveResource(Player player, Resource resource, int value) {
-        player.addResource(resource, value);
     }
 }

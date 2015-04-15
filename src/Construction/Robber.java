@@ -6,7 +6,7 @@ import Board.Tile;
 /**
  * Created by Jasper on 30/03/15.
  */
-public class Robber implements Construction {
+public class Robber {
 
     private Player player;
     private String type;
@@ -15,14 +15,12 @@ public class Robber implements Construction {
         type = "Robber";
     }
 
-    @Override
     public String getOwner() {
-        return null;
+        return player.toString();
     }
 
-    @Override
     public String getType() {
-        return null;
+        return type;
     }
 
     public void moveRobber(Tile tile) {

@@ -1,6 +1,5 @@
 package Construction;
 
-import Board.Intersection;
 import Game.Player;
 
 /**
@@ -12,6 +11,4 @@ public interface Construction {
     void setOwner(Player player);
     String getType();
     String toString();
-    Intersection getIntersection();
-    void setIntersection(Intersection intersection);
 }
