@@ -18,8 +18,9 @@ public class Main {
 
         player.moveRobber(robber, board.getTile(0));
 
-        tile = board.getTile(0);
+        tile = board.getTile(18);
 
         System.out.println(tile.getBorders());
+        System.out.println(player.toString());
     }
 }

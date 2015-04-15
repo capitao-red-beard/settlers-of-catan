@@ -92,6 +92,6 @@ public class Player {
     }
 
     public String toString() {
-        return name + colour;
+        return "Name: " + name + "\nColour: " + colour;
     }
 }
