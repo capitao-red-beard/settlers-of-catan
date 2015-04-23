@@ -91,6 +91,18 @@ public class Player {
         robber.moveRobber(tile);
     }
 
+    public void buildSettlement(Tile tile) {
+        tile.setConstruction(new Settlement(this));
+    }
+
+    public void buildCity(Tile tile) {
+        tile.setConstruction(new City(this));
+    }
+
+    public void buildRoad(Tile tile) {
+        tile.setConstruction(new Road(this));
+    }
+
     public String toString() {
         return "Name: " + name + "\nColour: " + colour;
     }
