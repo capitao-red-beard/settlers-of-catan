@@ -1,8 +1,3 @@
-package Game;
-
-import Board.Tile;
-import Construction.*;
-import Resources.*;
 
 import java.util.HashMap;
 
@@ -24,18 +19,6 @@ public class Player {
         armySize = 0;
 
         resources = new HashMap<Resource, Integer>();
-
-        Brick brick = new Brick();
-        Grain grain = new Grain();
-        Lumber lumber = new Lumber();
-        Ore ore = new Ore();
-        Wool wool = new Wool();
-
-        resources.put(brick, 0);
-        resources.put(grain, 0);
-        resources.put(lumber, 0);
-        resources.put(ore, 0);
-        resources.put(wool, 0);
     }
 
     public void addPoints(int value) {
@@ -83,24 +66,18 @@ public class Player {
         return roadLength;
     }
 
-    public void roll(Dice dice) {
-        int rolled = dice.roll();
+    public void roll(Game game) {
+        int rolled = game.rollDice();
     }
 
     public void moveRobber(Robber robber, Tile tile) {
         robber.moveRobber(tile);
     }
 
-    public void buildSettlement(Tile tile) {
-        tile.setConstruction(new Settlement(this));
-    }
+    public void buildConstruction(String type, int tile) {
+        if (type == "Road") {
 
-    public void buildCity(Tile tile) {
-        tile.setConstruction(new City(this));
-    }
-
-    public void buildRoad(Tile tile) {
-        tile.setConstruction(new Road(this));
+        }
     }
 
     public String toString() {

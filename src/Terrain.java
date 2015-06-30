@@ -1,23 +1,22 @@
-package Terrain;
-
 /**
- * Created by Jasper on 06/04/15.
+ * Created by jaspervandervalk on 30/06/15.
  */
-public class Pasture implements Terrain {
-
+public class Terrain {
     private String type;
     private boolean robber;
 
-    public Pasture() {
-        type = "Pasture";
+    public Terrain(String type) {
+        this.type = type;
     }
 
-    @Override
     public String getType() {
         return type;
     }
 
-    @Override
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public boolean getRobber() {
         if (robber == true) {
             return true;

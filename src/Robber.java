@@ -1,8 +1,3 @@
-package Construction;
-
-import Game.Player;
-import Board.Tile;
-
 /**
  * Created by Jasper on 30/03/15.
  */
