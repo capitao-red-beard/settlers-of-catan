@@ -33,6 +33,10 @@ public class Player {
         return points;
     }
 
+    public void setPoints(int value) {
+        points = value;
+    }
+
     public void addArmy(int value) {
         armySize += value;
     }
