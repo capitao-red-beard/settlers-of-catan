@@ -13,7 +13,11 @@ public class Game extends Thread {
     }
 
     public void addPlayer(Player player) {
-        players.add(player);
+        if(players.size() < 5) {
+            players.add(player);
+        } else {
+            System.out.println("Maximum players has been reached, unable to add another");
+        }
     }
 
     public void getPlayPoints() {
