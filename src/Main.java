@@ -10,6 +10,10 @@ public class Main {
 
         Robber robber = new Robber();
 
+        Bank bank = new Bank();
+
+        System.out.println(bank.toString());
+
         Tile tile;
 
         player.moveRobber(robber, board.getTile(0));
