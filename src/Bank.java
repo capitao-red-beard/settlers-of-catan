@@ -46,6 +46,7 @@ public class Bank {
         resources.put(resource, resources.get(resource) - value);
     }
 
+    /** Try to return a string version of the HashMap
     public String toString() {
         String text = "";
         for (HashMap.Entry<String, Tab> entry : hash.entrySet()) {
@@ -56,5 +57,5 @@ public class Bank {
         }
 
         return text;
-    }
+    } **/
 }
