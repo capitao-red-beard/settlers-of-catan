@@ -16,8 +16,20 @@ public class Game extends Thread {
         if(players.size() < 5) {
             players.add(player);
         } else {
-            System.out.println("Maximum players has been reached, unable to add another");
+            System.out.println("Maximum players has been reached, unable to add another.");
         }
+
+        System.out.println("You currently have " + players.size() + " in-game.");
+    }
+
+    public void removePlayer(Player player) {
+        if(players.size() > 0) {
+            players.remove(player);
+        } else {
+            System.out.println("You may not remove a player if you have less than 1 in game.");
+        }
+
+        System.out.println("You currently have " + players.size() + " in-game.");
     }
 
     public void getPlayPoints() {
