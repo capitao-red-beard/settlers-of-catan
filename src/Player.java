@@ -53,8 +53,8 @@ public class Player {
             resources.put(resource, resources.get(resource) + value);
     }
 
-    public void removeResource(Bank bank, Resource resource, int value) {
-        bank.addResource(resource, value);
+    // removed bank parameter from here as it can be done in the bank class.
+    public void removeResource(Resource resource, int value) {
         resources.put(resource, resources.get(resource) - value);
     }
 
