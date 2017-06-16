@@ -1,8 +1,4 @@
-
-import sun.tools.jconsole.Tab;
-
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Jasper on 06/04/15.
@@ -48,14 +44,9 @@ public class Bank {
 
     /** Try to return a string version of the HashMap
     public String toString() {
-        String text = "";
-        for (HashMap.Entry<String, Tab> entry : hash.entrySet()) {
-            String key = entry.getKey();
-            Tab tab = entry.getValue();
-
-            text = key + tab.toString();
+        String words = "";
+        for(int i = 0; i == resources.size(); ++i) {
+            // get individual value and add to string words with a space.
         }
-
-        return text;
     } **/
 }

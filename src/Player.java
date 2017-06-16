@@ -84,6 +84,10 @@ public class Player {
         }
     }
 
+    public void addSpecialCard(Resource resource, int value) {
+        resources.put(resource, value);
+    }
+
     public String toString() {
         return "Name: " + name + "\nColour: " + colour;
     }

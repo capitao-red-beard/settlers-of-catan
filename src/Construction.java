@@ -8,7 +8,6 @@ public class Construction {
     public Construction(Player owner, Tile[] tiles) {
         this.owner = owner;
         this.tiles = tiles;
-
     }
 
     public String getOwner() {

@@ -6,10 +6,12 @@ import java.util.ArrayList;
 public class Game extends Thread {
     private ArrayList<Player> players;
     private Bank bank;
+    private Board board;
 
     public Game() {
         players = new ArrayList<Player>();
         bank = new Bank();
+        board = new Board();
     }
 
     public void addPlayer(Player player) {

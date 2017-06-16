@@ -15,4 +15,8 @@ public class Resource {
     public void setType(String type) {
         this.type = type;
     }
+
+    public String toString() {
+        return "This card is of type: " + type + ".";
+    }
 }
