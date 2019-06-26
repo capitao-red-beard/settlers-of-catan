@@ -25,13 +25,17 @@ public class Bank {
     }
 
     public void giveResource(Player player, Resource resource, int value) {
-        this.removeResource(resource, value);
-        player.addResource(resource, value);
+        if (resources.get(resource) >= value) {
+            this.removeResource(resource, value);
+            player.addResource(resource, value);
+        } else {
+            System.out.println("Bank has no more resource" + resource + " to give.");
+        }
     }
 
     public void takeResource(Player player, Resource resource, int value) {
         this.addResource(resource, value);
-        player.removeResource(resource, value);
+        player.removeResource(resource, value, this);
     }
 
     public void addResource(Resource resource, int value) {
@@ -42,11 +46,7 @@ public class Bank {
         resources.put(resource, resources.get(resource) - value);
     }
 
-    /** Try to return a string version of the HashMap
     public String toString() {
-        String words = "";
-        for(int i = 0; i == resources.size(); ++i) {
-            // get individual value and add to string words with a space.
-        }
-    } **/
+        return "Resources: " + resources.keySet() + " Value: " + resources.values();
+    }
 }

@@ -1,10 +1,9 @@
-
 import java.util.HashMap;
 
 /**
  * Created by Jasper on 30/03/15.
  */
-public class Player {
+public class Player extends Thread {
 
     private int points, roadLength, armySize;
     private String name, colour;
@@ -53,9 +52,14 @@ public class Player {
             resources.put(resource, resources.get(resource) + value);
     }
 
-    // removed bank parameter from here as it can be done in the bank class.
-    public void removeResource(Resource resource, int value) {
-        resources.put(resource, resources.get(resource) - value);
+    public void removeResource(Resource resource, int value, Bank bank) {
+        if (resources.get(resource) >= value) {
+            resources.put(resource, resources.get(resource) - value);
+            bank.addResource(resource, value);
+        } else {
+            System.out.println("Unable to remove resource " + resource + " from " + name + " because they do not have " +
+                    "enough " + resource + " to remove.");
+        }
     }
 
     public String getResources() {
@@ -65,6 +69,8 @@ public class Player {
     public void addRoadLength(int value) {
         roadLength += value;
     }
+
+    public void removeRoadLength(int value) { roadLength -= value; }
 
     public int getRoadLength() {
         return roadLength;
@@ -78,9 +84,14 @@ public class Player {
         robber.moveRobber(tile);
     }
 
-    public void buildConstruction(String type, int tile) {
-        if (type == "Road") {
-
+    public void buildConstruction(String type, Tile tile1, Tile tile2, Tile tile3) {
+        if (tile1.hasConstruction() || tile2.hasConstruction() || tile3.hasConstruction()) {
+            System.out.println("One of the tiles on which you are trying to build already has a construction.");
+        } else {
+            Construction construction = new Construction(this, type);
+            tile1.setConstruction(construction);
+            tile2.setConstruction(construction);
+            tile3.setConstruction(construction);
         }
     }
 

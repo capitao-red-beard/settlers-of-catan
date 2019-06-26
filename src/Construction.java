@@ -3,22 +3,18 @@
  */
 public class Construction {
     private Player owner;
-    private Tile[] tiles;
+    private String type;
 
-    public Construction(Player owner, Tile[] tiles) {
+    public Construction(Player owner, String type) {
         this.owner = owner;
-        this.tiles = tiles;
+        this.type = type;
     }
 
     public String getOwner() {
         return owner.toString();
     }
 
-    public Tile[] getTiles() {
-        return tiles;
-    }
-
-    public String toString() {
-        return "Owner: " + owner + "\nTiles: " + tiles;
+    public String getType() {
+        return type;
     }
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
  */
 public class Game extends Thread {
     private ArrayList<Player> players;
+    private ArrayList<Construction> constructions;
     private Bank bank;
     private Board board;
 
@@ -25,16 +26,16 @@ public class Game extends Thread {
     }
 
     public void removePlayer(Player player) {
-        if(players.size() > 0) {
+        if(players.size() > 2) {
             players.remove(player);
         } else {
-            System.out.println("You may not remove a player if you have less than 1 in game.");
+            System.out.println("You may not remove a player if you have less than 3 in game.");
         }
 
         System.out.println("You currently have " + players.size() + " in-game.");
     }
 
-    public void getPlayPoints() {
+    public void getPlayerPoints() {
         for (Player player : players) {
             System.out.println(player.getPoints());
         }
@@ -42,5 +43,13 @@ public class Game extends Thread {
 
     public int rollDice() {
         return 2 + (int)(Math.random() * ((12 - 2) + 1));
+    }
+
+    public void checkWinner() {
+        for (Player player : players) {
+            if (player.getPoints() >= 10) {
+                System.out.println(player.getName() + " has won the game with " + player.getPoints() + " points.");
+            }
+        }
     }
 }

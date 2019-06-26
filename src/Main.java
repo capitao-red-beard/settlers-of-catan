@@ -4,6 +4,11 @@
 public class Main {
 
     public static void main (String[] args) {
+
+        System.out.println("Damares");
+
+        Game game = new Game();
+
         Board board = new Board();
 
         Player player = new Player("Jasper", "Orange");
@@ -22,5 +27,6 @@ public class Main {
 
         System.out.println(tile.getBorders());
         System.out.println(player.toString());
+
     }
 }

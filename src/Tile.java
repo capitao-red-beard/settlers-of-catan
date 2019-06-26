@@ -116,4 +116,20 @@ public class Tile {
     public String toString () {
         return "Terrain: " + terrain.getType() + " | Value: " + value;
     }
+
+    public void setConstruction(Construction construction) {
+        this.construction = construction;
+    }
+
+    public boolean hasConstruction() {
+        if (construction != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Construction getConstruction() {
+        return construction;
+    }
 }
